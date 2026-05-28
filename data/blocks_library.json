@@ -1,0 +1,72 @@
+{
+  "blocks": [
+    {
+      "name": "InputBlock",
+      "category": "Input",
+      "description": "Input data source",
+      "parameters": [
+        {
+          "name": "value",
+          "type": "string",
+          "default": ""
+        },
+        {
+          "name": "format",
+          "type": "string",
+          "default": "raw"
+        }
+      ]
+    },
+    {
+      "name": "ProcessorBlock",
+      "category": "Processing",
+      "description": "Process data",
+      "parameters": [
+        {
+          "name": "operation",
+          "type": "string",
+          "default": "pass"
+        },
+        {
+          "name": "threshold",
+          "type": "float",
+          "default": 0.5
+        }
+      ]
+    },
+    {
+      "name": "FilterBlock",
+      "category": "Processing",
+      "description": "Filter data",
+      "parameters": [
+        {
+          "name": "filter_type",
+          "type": "string",
+          "default": "lowpass"
+        },
+        {
+          "name": "frequency",
+          "type": "float",
+          "default": 1000.0
+        }
+      ]
+    },
+    {
+      "name": "OutputBlock",
+      "category": "Output",
+      "description": "Output data",
+      "parameters": [
+        {
+          "name": "format",
+          "type": "string",
+          "default": "console"
+        },
+        {
+          "name": "verbose",
+          "type": "bool",
+          "default": false
+        }
+      ]
+    }
+  ]
+}
