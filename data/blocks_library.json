@@ -1,72 +1,61 @@
 {
   "blocks": [
     {
-      "name": "InputBlock",
-      "category": "Input",
-      "description": "Input data source",
+      "name": "WRITE_AHB_NEW",
+      "module_path": "ADSP.ROUTINES.AHB_WRITE_NEW.AHB_WRITE_NEW_class",
+      "class_name": "WRITE_AHB_NEW",
+      "file_path": "ADSP/ROUTINES/AHB_WRITE_NEW/AHB_WRITE_NEW_class.py",
+      "description": "Write data to AHB memory interface",
       "parameters": [
         {
-          "name": "value",
-          "type": "string",
-          "default": ""
+          "name": "offset",
+          "required": true,
+          "default": null,
+          "type": "int",
+          "description": "Memory offset for write operation"
         },
         {
-          "name": "format",
-          "type": "string",
-          "default": "raw"
-        }
-      ]
-    },
-    {
-      "name": "ProcessorBlock",
-      "category": "Processing",
-      "description": "Process data",
-      "parameters": [
-        {
-          "name": "operation",
-          "type": "string",
-          "default": "pass"
+          "name": "ahb_addr",
+          "required": true,
+          "default": null,
+          "type": "int",
+          "description": "AHB address for write operation"
         },
         {
-          "name": "threshold",
-          "type": "float",
-          "default": 0.5
-        }
-      ]
-    },
-    {
-      "name": "FilterBlock",
-      "category": "Processing",
-      "description": "Filter data",
-      "parameters": [
-        {
-          "name": "filter_type",
-          "type": "string",
-          "default": "lowpass"
+          "name": "delay",
+          "required": false,
+          "default": null,
+          "type": "block",
+          "description": "Optional delay block"
         },
         {
-          "name": "frequency",
-          "type": "float",
-          "default": 1000.0
-        }
-      ]
-    },
-    {
-      "name": "OutputBlock",
-      "category": "Output",
-      "description": "Output data",
-      "parameters": [
-        {
-          "name": "format",
-          "type": "string",
-          "default": "console"
+          "name": "Rle",
+          "required": false,
+          "default": null,
+          "type": "block",
+          "description": "Optional RLE encoding block"
         },
         {
-          "name": "verbose",
-          "type": "bool",
-          "default": false
+          "name": "n_inputs",
+          "required": false,
+          "default": 1,
+          "type": "int",
+          "description": "Number of inputs"
         }
-      ]
+      ],
+      "inputs": {
+        "description": "Input data to write",
+        "type": ["int", "hfp"]
+      },
+      "outputs": {
+        "description": "Output data after write",
+        "type": ["int", "hfp"]
+      },
+      "has_run_routine": true
     }
-  ]
+  ],
+  "metadata": {
+    "total_blocks": 1,
+    "format_version": "1.0"
+  }
 }
